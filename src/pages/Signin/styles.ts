@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { shade } from 'polished'
 
 import signInBackgroundImg from '../../assets/sign-background.png'
 
@@ -13,10 +14,15 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
 
-  place-content: center;
+  justify-content: center;
+  align-items: center;
 
   width: 100%;
   max-width: 700px;
+
+  img {
+    width: 220px;
+  }
 
   form {
     margin: 80px 0;
@@ -33,6 +39,11 @@ export const Content = styled.div`
       border: 2px solid #232121;
       padding: 16px;
       width: 100%;
+      color: #F4EDE8;
+
+      &::placeholder {
+        color: #666360;
+      }
 
       & + input {
         margin-top: 8px;
@@ -49,6 +60,42 @@ export const Content = styled.div`
       width: 100%;
       font-weight: 500;
       margin-top: 16px;
+      transition: background-color 0.2s;
+
+      &:hover{
+        background: ${shade(0.2, '#FF9000')};
+      }
+    }
+
+    a {
+      color: #F4EDE8;
+      display: block;
+      margin-top: 24px;
+      text-decoration: none;
+      transition: color 0.2s;
+
+      &:hover {
+        color: ${shade(0.2, '#F4EDE8')};
+      }
+    }
+  }
+
+  > a {
+    color: #FF9000;
+    display: block;
+    margin-top: 10px;
+    text-decoration:  none;
+    transition: color 0.2s;
+
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 16px;
+    }
+
+    &:hover{
+      color: ${shade(0.2, '#FF9000')};
     }
   }
 `
