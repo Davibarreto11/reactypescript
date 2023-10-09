@@ -24,10 +24,8 @@ interface SignInFormData {
 export const Signin: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
 
-  const { user, signIn } = useAuth()
+  const { signIn } = useAuth()
   const { addToast } = useToast()
-
-  console.log(user)
 
   const handleSubmit = useCallback(async (data: SignInFormData) => {
     try {
