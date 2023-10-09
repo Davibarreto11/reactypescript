@@ -1,4 +1,5 @@
 import React, { useCallback, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { FiArrowLeft, FiMail, FiUser, FiLock } from 'react-icons/fi'
 import { type FormHandles } from '@unform/core'
 import { Form } from '@unform/web'
@@ -8,7 +9,7 @@ import getValidationErrors from '../../util/getValidationErrors'
 
 import Logo from '../../assets/logo.svg'
 
-import { Container, Content, Background } from './styles'
+import { Container, Content, AnimationContainer, Background } from './styles'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 
@@ -41,6 +42,7 @@ export const SignUp: React.FC = () => {
     <Background />
 
     <Content>
+      <AnimationContainer>
       <img src={Logo} alt="GoBarber" />
 
       <Form ref={formRef} onSubmit={handleSubmit}>
@@ -53,10 +55,12 @@ export const SignUp: React.FC = () => {
         <Button type='submit'>Cadastrar</Button>
       </Form>
 
-      <a href="login">
+      <Link to="/">
         <FiArrowLeft />
         Voltar para logon
-      </a>
+      </Link>
+      </AnimationContainer>
+
     </Content>
   </Container>
   )
