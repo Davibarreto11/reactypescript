@@ -21,10 +21,10 @@ export const Content = styled.div`
 
 `
 
-const appearFromLeft = keyframes`
+const appearFromRight = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(50px);
   }
   to {
     opacity: 1;
@@ -38,7 +38,7 @@ export const AnimationContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  animation: ${appearFromLeft} 1s;
+  animation: ${appearFromRight} 1s;
 
   img {
     width: 220px;
