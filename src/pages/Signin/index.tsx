@@ -74,7 +74,7 @@ export const Signin: React.FC = () => {
 
             <Button type='submit'>Entrar</Button>
 
-            <a href="">Esqueci minha senha</a>
+            <Link to="/forgot-password">Esqueci minha senha</Link>
           </Form>
 
           <Link to="/signup">
