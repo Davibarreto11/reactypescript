@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { type FormHandles } from '@unform/core'
 import { Form } from '@unform/web'
 import { FiLogIn, FiMail } from 'react-icons/fi'
@@ -25,7 +25,7 @@ export const ForgortPassword: React.FC = () => {
   const [loading, setLoading] = useState(false)
 
   const formRef = useRef<FormHandles>(null)
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   const { addToast } = useToast()
 
@@ -50,8 +50,6 @@ export const ForgortPassword: React.FC = () => {
         title: 'E-mail de recuperação enviado',
         description: 'Enviamos um e-mail para confirmar a recuperação de senha, cheque sua caixa de entrada'
       })
-
-      navigate('/sigin')
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErrors(err)
@@ -69,7 +67,7 @@ export const ForgortPassword: React.FC = () => {
     } finally {
       setLoading(false)
     }
-  }, [navigate, addToast])
+  }, [addToast])
 
   return (
     <Container>

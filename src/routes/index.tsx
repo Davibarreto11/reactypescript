@@ -7,6 +7,7 @@ import { Route as PrivateUnsigned } from './PrivateUnsigned'
 import { Signin } from '../pages/Signin'
 import { SignUp } from '../pages/Signup'
 import { ForgortPassword } from '../pages/ForgotPassword'
+import { ResetPassword } from '../pages/ResetPassword'
 
 import { Dashboard } from '../pages/Dashboard'
 
@@ -16,6 +17,7 @@ const Router: React.FC = () => (
       <Route path='' element={<Signin />} />
       <Route path='/signup' element={<SignUp />} />
       <Route path='/forgot-password' element={<ForgortPassword />} />
+      <Route path='/reset-password' element={<ResetPassword />} />
     </Route>
 
     <Route element={<PrivateUnsigned />}>
