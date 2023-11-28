@@ -152,6 +152,10 @@ export const Section = styled.section`
     padding-bottom: 16px;
     margin-bottom: 16px;
   }
+
+  >p {
+    color: #999591;
+  }
 `
 
 export const Appointment = styled.div`
@@ -167,6 +171,7 @@ export const Appointment = styled.div`
     display: flex;
     align-items: center;
     color: #f4ede8;
+    width: 70px;
 
     svg {
       color: #ff9000;
@@ -199,43 +204,22 @@ export const Appointment = styled.div`
 
 export const Calendar = styled.div`
   width: 380px;
+
   .DayPicker {
     background: #28262e;
     border-radius: 10px;
+    padding: 20px;
+    width: 87%;
+    text-transform: capitalize;
   }
 
-  .DayPicker {
-    padding-bottom: 0;
-  }
-
-  .DayPicker {
-    width: 100%;
-    margin: auto;
-  }
-
-  .DayPicker {
-    border-collapse: separate;
-    border-spacing: 8px;
-    margin: 16px;
-  }
-
-  .day {
-    width: 40px;
-    height: 40px;
-  }
-
-  .day-available:not(.outside) {
+  .available:not(.outside) {
     background: #3e3b47;
     border-radius: 10px;
     color: #FFF;
-  }
-
-  /* .DayPicker:not(.DayPicker--interactionDisabled)
-    .DayPicker:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not() */
-
-
-  .day {
-    font-weight: normal;
+    margin: 2px;
+    width: 37px;
+    height: 37px;
   }
 
   .disabled {

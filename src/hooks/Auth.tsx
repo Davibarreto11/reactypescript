@@ -5,6 +5,7 @@ interface User {
   id: string
   name: string
   avatar_url: string
+  token: string
 }
 
 interface AuthState {
@@ -18,6 +19,7 @@ interface SignInCredentials {
 }
 
 interface AuthContextState {
+  token: string
   user: User
   signIn: (credentials: SignInCredentials) => Promise<void>
   signOut: () => void
@@ -63,7 +65,7 @@ export const AuthProvider: React.FC<AuthProviderState> = ({ children }) => {
   }, [])
 
   return (
-    <AuthContext.Provider value={{ user: data.user, signIn, signOut }}>
+    <AuthContext.Provider value={{ token: data.token, user: data.user, signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   )
