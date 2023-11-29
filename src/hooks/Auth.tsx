@@ -24,6 +24,7 @@ interface AuthContextState {
   user: User
   signIn: (credentials: SignInCredentials) => Promise<void>
   signOut: () => void
+  updateUser: (user: User) => void
 }
 
 interface AuthProviderState {
@@ -55,6 +56,8 @@ export const AuthProvider: React.FC<AuthProviderState> = ({ children }) => {
     localStorage.setItem('@Gobarber:token', token)
     localStorage.setItem('@Gobarber:user', JSON.stringify(user))
 
+    api.defaults.headers.authorization = `Bearer ${token}`
+
     setData({ token, user })
   }, [])
 
@@ -65,8 +68,17 @@ export const AuthProvider: React.FC<AuthProviderState> = ({ children }) => {
     setData({} as AuthState)
   }, [])
 
+  const updateUser = useCallback((user: User) => {
+    localStorage.setItem('@Gobarber:user', JSON.stringify(user))
+
+    setData({
+      token: data.token,
+      user
+    })
+  }, [setData, data.token])
+
   return (
-    <AuthContext.Provider value={{ token: data.token, user: data.user, signIn, signOut }}>
+    <AuthContext.Provider value={{ token: data.token, user: data.user, signIn, signOut, updateUser }}>
       {children}
     </AuthContext.Provider>
   )
