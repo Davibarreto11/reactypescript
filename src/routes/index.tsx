@@ -10,6 +10,7 @@ import { ForgortPassword } from '../pages/ForgotPassword'
 import { ResetPassword } from '../pages/ResetPassword'
 
 import { Dashboard } from '../pages/Dashboard'
+import { Profile } from '../pages/Profile'
 
 const Router: React.FC = () => (
   <Routes>
@@ -22,6 +23,7 @@ const Router: React.FC = () => (
 
     <Route element={<PrivateUnsigned />}>
       <Route path='/dashboard' element={<Dashboard />} />
+      <Route path='/profile' element={<Profile />} />
     </Route>
   </Routes>
 )
