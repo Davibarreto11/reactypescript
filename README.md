@@ -53,6 +53,12 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ![Alt text](image-3.png)
 ![Alt text](image-4.png)
 
+## TDD
+
+![image](https://github.com/Davibarreto11/reactypescript/assets/102602408/61a2f4d9-5bd8-4a05-a2d5-ba49fc2545e6)
+![image](https://github.com/Davibarreto11/reactypescript/assets/102602408/2c5678cf-0d74-42f4-ba4f-898f7d8b23bf)
+
+
 ## API
 
 https://github.com/Davibarreto11/nodeTypescript
